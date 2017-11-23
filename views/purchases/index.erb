@@ -136,6 +136,7 @@
 			border-width: 0 0 1px;
 			padding: 0.8em 1.1em;
 			vertical-align: top;
+			text-align: left;
 		}
 	</style>
 </head>
@@ -156,7 +157,7 @@
 			</div>
 		</form>
 
-		
+		<%if @purchases.size > 0%>
 			<h2>Seus dados carregados:</h2>
 			<div class="list-table">
 				<table class="table">
@@ -171,13 +172,20 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td></td>
-						</tr>
+						<%@purchases.each do |item|%>
+							<tr>
+								<td><%=item.purchaser_name%></td>
+								<td><%=item.item_description%></td>
+								<td><%=item.item_price%></td>
+								<td><%=item.purchase_count%></td>
+								<td><%=item.merchant_address%></td>
+								<td><%=item.merchant_name%></td>
+							</tr>
+						<%end%>
 					</tbody>
 				</table>
 			</div>
-		
+		<%end%>
 	</div>
 
 	<script>
