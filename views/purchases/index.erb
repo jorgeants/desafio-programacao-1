@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Desafio Programação 1 - Upload de arquivos</title>
+	<style>
+		*{
+			box-sizing: inherit;
+		}
+		html, body{
+			margin: 0;
+			padding: 0;
+			font-family: helvetica, arial, 'sans-serif';
+			font-size: 14px;
+			box-sizing: border-box;
+		}
+		.wrapper{
+			width: 60%;
+			margin: 0 auto;
+			display: flex;
+			text-align: center;
+			flex-wrap: wrap;
+			padding-top: 10%;
+		}
+		form{
+			width: 100%;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			margin-bottom: 40px;
+		}
+		h1, h2{
+			font-weight: 300;
+			width: 100%;
+			display: block;
+		}
+		h1{
+			font-size: 2.4em;
+		}
+		h2{
+			font-size: 2em;
+		}
+		.file-input{
+			height: 0.01em;
+			left: 0;
+			outline: none;
+			position: absolute;
+			top: 0;
+			width: 0.01em;
+		}
+		.file{
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			-webkit-box-align: stretch;
+			-ms-flex-align: stretch;
+			align-items: stretch;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: start;
+			-ms-flex-pack: start;
+			justify-content: flex-start;
+			position: relative;
+		}
+		.file-label{
+			-webkit-box-align: stretch;
+			-ms-flex-align: stretch;
+			align-items: stretch;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			cursor: pointer;
+			-webkit-box-pack: start;
+			-ms-flex-pack: start;
+			justify-content: flex-start;
+			overflow: hidden;
+			position: relative;
+		}
+		.file-cta{
+			background-color: whitesmoke;
+			color: #4a4a4a;
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			border: 1px solid transparent;
+			border-radius: 3px;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			display: -webkit-inline-box;
+			display: -ms-inline-flexbox;
+			display: inline-flex;
+			font-size: 1rem;
+			height: 2.25em;
+			-webkit-box-pack: start;
+			-ms-flex-pack: start;
+			justify-content: flex-start;
+			line-height: 1.5;
+			padding-bottom: calc(0.375em - 1px);
+			padding-left: calc(0.625em - 1px);
+			padding-right: calc(0.625em - 1px);
+			padding-top: calc(0.375em - 1px);
+			position: relative;
+			vertical-align: top;
+			border-color: #dbdbdb;
+			border-radius: 3px;
+			font-size: 1em;
+			padding-left: 1em;
+			padding-right: 1em;
+			white-space: nowrap;
+		}
+		.list-table{
+			width: 100%;
+		}
+		table{
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		.table{
+			width: 100%;
+			font-size: 1em;
+			background-color: white;
+			color: #363636;
+			margin-bottom: 1.5rem;
+		}
+		.table thead tr th{
+			font-size: .9em;
+			font-weight: 500;
+		}
+		.table td, .table th{
+			border: 1px solid #dbdbdb;
+			border-width: 0 0 1px;
+			padding: 0.8em 1.1em;
+			vertical-align: top;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Faça o upload dos dados facilmente e nós cuidamos do dados</h1>
+		<br>
+		<form action="" method="post" id="upload_file_form" enctype="multipart/form-data">
+			<div class="file">
+				<label class="file-label">
+					<input class="file-input" type="file" name="file" id="file">
+					<span class="file-cta">
+						<span class="file-label">
+							Selecione um arquivo
+						</span>
+					</span>
+				</label>
+			</div>
+		</form>
+
+		
+			<h2>Seus dados carregados:</h2>
+			<div class="list-table">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Purchaser Name</th>
+							<th>Item Description</th>
+							<th>Item Price</th>
+							<th>Purchase Count</th>
+							<th>Merchant Address</th>
+							<th>Merchant Name</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		
+	</div>
+
+	<script>
+		document.getElementById("file").onchange = function() {
+			document.getElementById("upload_file_form").submit();
+		};
+	</script>
+</body>
+</html>
